@@ -63,14 +63,6 @@ module JIRA
         end
       end
 
-      # def self.jql2(client, jql)
-      #   url = client.options[:rest_base_path] + "/search?jql=" + CGI.escape(jql)
-      #   response = client.get(url)
-      #   json = parse_json(response.body)
-      #   puts json['total']
-      #   puts pages = (json['total']/json['maxResults'].to_f).ceil
-      # end
-
       def respond_to?(method_name, include_all=false)
         if attrs.keys.include?('fields') && attrs['fields'].keys.include?(method_name.to_s)
           true
